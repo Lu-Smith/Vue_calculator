@@ -10,11 +10,18 @@
       class="p-3"
       style="max-width: 400px; margin: 50px auto; background: #234"
     >
-      <!--Calculatr Resuls-->
+      <!-- Calculator Results-->
       <div
-        class="w-full rounded m-1 p-3 text-right lead font-wieght-bold text-white bg-vue-dark"
+        class="w-full rounded m-1 p-3 text-right lead font-weight-bold text-white bg-vue-dark"
       >
         {{ calculatorValue || 0 }}
+      </div>
+
+      <!-- Calculator buttons-->
+      <div class="row no-gutters">
+        <div class="col-3" v-for="n in calculatorElements" v-bind:key="n">
+          {{ n }}
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +36,26 @@ export default {
   data() {
     return {
       calculatorValue: "",
+      calculatorElements: [
+        "C",
+        "*",
+        "/",
+        "-",
+        "7",
+        "8",
+        "9",
+        "+",
+        "4",
+        "5",
+        "6",
+        "%",
+        "1",
+        "2",
+        "3",
+        "=",
+        "0",
+        ".",
+      ],
     };
   },
 };
