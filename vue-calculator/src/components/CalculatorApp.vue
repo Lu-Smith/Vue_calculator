@@ -14,7 +14,7 @@
       <div
         class="w-full rounded m-1 p-3 text-right lead font-wieght-bold text-white bg-vue-dark"
       >
-        000
+        {{ calculatorValue || 0 }}
       </div>
     </div>
   </div>
@@ -25,6 +25,11 @@ export default {
   name: "CalculatorApp",
   props: {
     msg: String,
+  },
+  data() {
+    return {
+      calculatorValue: "",
+    };
   },
 };
 </script>
