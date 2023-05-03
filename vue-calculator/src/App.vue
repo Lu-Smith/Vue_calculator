@@ -1,5 +1,5 @@
 <template>
-  <CalculatorApp msg="Welcome to Your my first Vue CalculatorApp" />
+  <CalculatorApp msg="Vue Calculator" />
 </template>
 
 <script>
