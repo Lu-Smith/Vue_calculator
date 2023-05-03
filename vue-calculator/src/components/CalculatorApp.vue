@@ -20,7 +20,11 @@
       <!-- Calculator buttons-->
       <div class="row no-gutters">
         <div class="col-3" v-for="n in calculatorElements" v-bind:key="n">
-          {{ n }}
+          <div
+            class="lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class"
+          >
+            {{ n }}
+          </div>
         </div>
       </div>
     </div>
@@ -68,5 +72,9 @@ p {
 }
 .bg-vue-dark {
   background: #31475e;
+}
+.hover-class:hover {
+  cursor: pointer;
+  background: #3d5875;
 }
 </style>
