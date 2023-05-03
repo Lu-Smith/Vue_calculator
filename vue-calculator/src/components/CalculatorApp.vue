@@ -64,6 +64,8 @@ export default {
         "0",
         ".",
       ],
+      operator: null,
+      previousCalculatorValue: "",
     };
   },
   methods: {
@@ -79,6 +81,22 @@ export default {
       /*% value */
       if (n === "%") {
         this.calculatorValue = this.calculatorValue / 100 + "";
+      }
+
+      /* calculactions */
+      if (["/", "*", "-", "+"].includes(n)) {
+        this.operator = n;
+        this.previousCalculatorValue = this.calculatorValue;
+        this.calculatorValue = "";
+      }
+
+      if (n === "=") {
+        this.calculatorValue = eval(
+          this.previousCalculatorValue + this.operator + this.calculatorValue
+        );
+
+        this.previousCalculatorValue = "";
+        this.operator = null;
       }
     },
   },
