@@ -72,9 +72,13 @@ export default {
       if (!isNaN(n) || n === ".") {
         this.calculatorValue += n + "";
       }
-      /*Append value */
+      /*Clear value */
       if (n === "C") {
         this.calculatorValue = "";
+      }
+      /*% value */
+      if (n === "%") {
+        this.calculatorValue = this.calculatorValue / 100 + "";
       }
     },
   },
