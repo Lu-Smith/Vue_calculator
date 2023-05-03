@@ -6,6 +6,17 @@
       your heart's content -
       <strong>pure math magic at your fingertips</strong>.
     </p>
+    <div
+      class="p-3"
+      style="max-width: 400px; margin: 50px auto; background: #234"
+    >
+      <!--Calculatr Resuls-->
+      <div
+        class="w-full rounded m-1 p-3 text-right lead font-wieght-bold text-white bg-vue-dark"
+      >
+        000
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,5 +33,8 @@ export default {
 <style scoped>
 p {
   font-style: italic;
+}
+.bg-vue-dark {
+  background: #31475e;
 }
 </style>
