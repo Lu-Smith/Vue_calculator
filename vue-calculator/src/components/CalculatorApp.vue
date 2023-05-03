@@ -22,6 +22,9 @@
         <div class="col-3" v-for="n in calculatorElements" v-bind:key="n">
           <div
             class="lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class"
+            :class="{
+              'bg-vue-green': ['C', '*', '/', '-', '+', '%', '='].includes(n),
+            }"
           >
             {{ n }}
           </div>
@@ -76,5 +79,8 @@ p {
 .hover-class:hover {
   cursor: pointer;
   background: #3d5875;
+}
+.bg-vue-green {
+  background: #3fb984;
 }
 </style>
