@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>{{ msg }}</h1>
-    <p>Hello World</p>
+    <p>
+      With just a few clicks, you can add, subtract, multiply, and divide to
+      your heart's content -
+      <strong>pure math magic at your fingertips</strong>.
+    </p>
   </div>
 </template>
 
