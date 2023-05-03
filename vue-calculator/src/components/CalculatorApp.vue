@@ -25,6 +25,7 @@
             :class="{
               'bg-vue-green': ['C', '*', '/', '-', '+', '%', '='].includes(n),
             }"
+            @click="action(n)"
           >
             {{ n }}
           </div>
@@ -64,6 +65,14 @@ export default {
         ".",
       ],
     };
+  },
+  methods: {
+    action(n) {
+      /*Append value */
+      if (!isNaN(n) || n === ".") {
+        this.calculatorValue += n + "";
+      }
+    },
   },
 };
 </script>
