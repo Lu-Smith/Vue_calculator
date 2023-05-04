@@ -96,12 +96,18 @@ export default {
 
       /* calculactions */
       if (["/", "*", "-", "+"].includes(n)) {
+        if (["/", "*", "-", "+"].includes(this.lastInput)) {
+          return;
+        }
         this.operator = n;
         this.previousCalculatorValue = this.calculatorValue;
         this.calculatorValue = "";
       }
 
       if (n === "=") {
+        if (["/", "*", "-", "+", "="].includes(this.lastInput)) {
+          return;
+        }
         this.calculatorValue = eval(
           this.previousCalculatorValue + this.operator + this.calculatorValue
         );
@@ -109,6 +115,7 @@ export default {
         this.previousCalculatorValue = "";
         this.operator = null;
       }
+      this.lastInput = n;
     },
   },
 };
