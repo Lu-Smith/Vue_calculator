@@ -10,11 +10,20 @@
       class="p-3"
       style="max-width: 400px; margin: 50px auto; background: #234"
     >
+      <!-- Formula-->
+      <div
+        class="w-full rounded mx-1 py-2 px-3 text-end lead font-weight-bold text-black bg-vue-yellow formula"
+        style="height: 40px"
+      >
+        {{ previousCalculatorValue }} {{ operator }} {{ calculatorValue }}
+      </div>
+
       <!-- Calculator Results-->
       <div
-        class="w-full rounded m-1 p-3 text-right lead font-weight-bold text-white bg-vue-dark"
+        class="w-full rounded mx-1 mb-1 p-3 text-end lead font-weight-bold text-white bg-vue-dark"
+        style="height: 60px"
       >
-        {{ calculatorValue || 0 }}
+        {{ calculatorValue }}
       </div>
 
       <!-- Calculator buttons-->
@@ -77,6 +86,8 @@ export default {
       /*Clear value */
       if (n === "C") {
         this.calculatorValue = "";
+        this.previousCalculatorValue = "";
+        this.operator = "";
       }
       /*% value */
       if (n === "%") {
@@ -117,5 +128,8 @@ p {
 }
 .bg-vue-green {
   background: #3fb984;
+}
+.bg-vue-yellow {
+  background: #f3ec71;
 }
 </style>
