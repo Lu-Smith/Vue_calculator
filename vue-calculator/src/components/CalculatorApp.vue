@@ -82,7 +82,11 @@ export default {
     action(n) {
       /*Append value */
       if (!isNaN(n) || n === ".") {
-        this.calculatorValue += n + "";
+        if ("=".includes(this.lastInput)) {
+          this.calculatorValue = n;
+        } else {
+          this.calculatorValue += n + "";
+        }
       }
       /*Clear value */
       if (n === "C") {
@@ -110,6 +114,7 @@ export default {
         if ("=".includes(this.lastInput)) {
           return;
         }
+
         this.calculatorValue = eval(
           this.previousCalculatorValue + this.operator + this.calculatorValue
         );
@@ -118,6 +123,7 @@ export default {
         this.operator = null;
       }
       this.lastInput = n;
+
       if (this.previousCalculatorValue) {
         this.formula =
           this.previousCalculatorValue + this.operator + this.calculatorValue;
