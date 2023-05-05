@@ -105,8 +105,14 @@ export default {
         if (["/", "*", "-", "+"].includes(this.lastInput)) {
           return;
         }
+        if (this.operator) {
+          this.previousCalculatorValue = eval(
+            this.previousCalculatorValue + this.operator + this.calculatorValue
+          );
+        } else {
+          this.previousCalculatorValue = this.calculatorValue;
+        }
         this.operator = n;
-        this.previousCalculatorValue = this.calculatorValue;
         this.calculatorValue = "";
       }
 
