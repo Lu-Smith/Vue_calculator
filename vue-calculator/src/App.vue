@@ -1,14 +1,17 @@
 <template>
   <CalculatorApp msg="Vue Calculator" />
+  <FooterApp />
 </template>
 
 <script>
 import CalculatorApp from "./components/CalculatorApp.vue";
+import FooterApp from "./components/FooterApp.vue";
 
 export default {
   name: "App",
   components: {
     CalculatorApp,
+    FooterApp,
   },
 };
 </script>
