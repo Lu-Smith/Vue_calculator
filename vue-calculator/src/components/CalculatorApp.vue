@@ -30,7 +30,7 @@
       <div class="row no-gutters">
         <div class="col-3" v-for="n in calculatorElements" v-bind:key="n">
           <div
-            class="lead text-white text-center m-1 py-3 bg-vue-dark rounded hover-class"
+            class="lead text-white text-center m-1 py-2 bg-vue-dark rounded hover-class"
             :class="{
               'bg-vue-green': ['C', '*', '/', '-', '+', '%', '='].includes(n),
             }"
@@ -105,7 +105,7 @@ export default {
       }
 
       if (n === "=") {
-        if (["/", "*", "-", "+", "="].includes(this.lastInput)) {
+        if ("=".includes(this.lastInput)) {
           return;
         }
         this.calculatorValue = eval(
