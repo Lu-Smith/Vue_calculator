@@ -15,7 +15,7 @@
         class="w-full rounded mx-1 py-2 px-3 text-end lead font-weight-bold text-black bg-vue-yellow formula"
         style="height: 40px"
       >
-        {{ previousCalculatorValue }} {{ operator }} {{ calculatorValue }}
+        {{ formula }}
       </div>
 
       <!-- Calculator Results-->
@@ -75,6 +75,7 @@ export default {
       ],
       operator: null,
       previousCalculatorValue: "",
+      formula: "",
     };
   },
   methods: {
@@ -88,6 +89,7 @@ export default {
         this.calculatorValue = "";
         this.previousCalculatorValue = "";
         this.operator = "";
+        this.formula = "";
       }
       /*% value */
       if (n === "%") {
@@ -116,6 +118,14 @@ export default {
         this.operator = null;
       }
       this.lastInput = n;
+      if (this.previousCalculatorValue) {
+        this.formula =
+          this.previousCalculatorValue + this.operator + this.calculatorValue;
+      } else if (this.operator) {
+        this.formula = this.calculatorValue + this.operator;
+      } else {
+        this.formula = this.calculatorValue;
+      }
     },
   },
 };
